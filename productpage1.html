@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    
+
+    <style>
+         h4 {
+      background: gray;
+      color: white;
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 20px;
+     margin-left: 215px;
+    }
+         body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .page-border {
+      border: 30px solid gray;
+      width: 999px;
+      height: 1780px;
+      margin-top: -15px;
+      margin-left: 215px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      padding: 20px;
+    }
+
+    .header h2 {
+      font-size: 24px;
+      color: #003B49;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-left: auto;
+    }
+
+    .list {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+      color: #333;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 2px solid #ccc;
+      border-radius: 999px;
+      padding: 8px 15px;
+      background-color: white;
+      width: 250px;
+    }
+
+    .search-box i {
+      font-size: 18px;
+      color: #555;
+      margin-right: 10px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      font-size: 15px;
+      background: transparent;
+      flex: 1;
+    }
+
+    .icon-group {
+      display: flex;
+      gap: 20px;
+      font-size: 18px;
+    }
+
+    .icon1, .icon2, .icon3 {
+      border: 1px solid #bbb;
+      border-radius: 50%;
+      font-size: 17px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner {
+      background-color: #003B49;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+     .product-page-title {
+      padding: 15px;
+      margin-left: 10px;
+      margin-top: -18px;
+    }
+     .product-page-title h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+     .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 760px;
+      margin-left: 210px;
+      margin-top: -70px;
+    }
+
+    .sort span {
+      margin-right: 15px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .filter-button {
+      border: 1px solid #000;
+      padding: 6px 16px;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+     align-items: center;
+      gap: 8px;
+      width: 80px;
+    }
+    .cont{
+      margin-left: 20px;
+
+    }
+    .product-grid{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .product-image img {
+      width: 190px;
+      height: 200px;
+      margin-left: 40px;
+      margin-top: 20px;
+    }
+    .product-image {
+        background-color: white;
+        box-shadow: 0 0 26px rgba(0,0,0,0.08);
+       height: 250px;
+      width: 270px;
+      border-top-left-radius: 80px;
+      border-bottom-right-radius: 80px;
+    }
+    .product-card{
+      margin-left: 40px;
+      margin-top: 36px;
+      
+     
+    }
+    .product-card p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #222;
+      line-height: 1.4;
+    }
+
+    .price {
+      font-weight: bold;
+      color: black;
+      font-size: 16px;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      font-size: 13px;
+      color: gray;
+      margin-left: 8px;
+    }
+    .bb{
+      margin-top: 28px;
+      margin-left: 400px;
+    }
+        
+.footer {
+  background: #9dc3c9;
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 40px 60px 20px;
+  width: 880px;
+  font-family: Arial, sans-serif;
+}
+
+ 
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-size: 14px;
+  color: black;
+}
+
+.footer-section p {
+  font-size: 14px;
+  color: black;
+  margin: 6px 0;
+}
+
+.social-media {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-media i {
+  font-size: 16px;
+  color: black;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  font-size: 13px;
+  background: #9dc3c9;
+  width: 94 0px;
+  border-top: 1px solid #555;
+  color: black;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  white-space: nowrap;
+}
+
+.footer-right {
+  white-space: nowrap;
+}
+
+    </style>
+</head>
+
+<body>
+    <h4>product page</h4>
+     <div class="page-border">
+    <div class="header">
+      <h2>Fragranzia</h2>
+      <div class="header-right">
+        <ul class="list">
+          <li>Home</li>
+          <li>Products</li>
+          <li>Gifting</li>
+          <li>About</li>
+        </ul>
+        <div class="search-box">
+          <i class="fa fa-search"></i>
+          <input type="text" placeholder="Search Here" />
+        </div>
+        <div class="icon-group">
+          <div class="icon1"><i class="fas fa-shopping-cart"></i></div>
+          <div class="icon2"><i class="fas fa-bell"></i></div>
+          <div class="icon3"><i class="fas fa-user"></i></div>
+        </div>
+      </div>
+    </div>
+   
+
+    <div class="banner">
+      ENJOY FESTIVE DISCOUNTS! FREE SHIPPING ABOVE ₹999 !
+    </div>
+
+      <div class="product-page-title">
+      <h3>All Products</h3>
+      <p style=" color: #555; font-size: small;">Home > Products</p>
+    </div>
+
+     <div class="filter-bar">
+      <div class="sort">
+        <span>Sort By:</span>
+        <span style="color: #003B49;">Relevance</span>
+        <span>Newest First</span>
+        <span>Popularity</span>
+        <span>Price--Low to High</span>
+        <span>Price--High to Low</span>
+      </div>
+      <div class="filter-button">
+        <div class="cont">Filter <i class="fas fa-sliders-h"></i></div>
+      </div>
+    </div>
+
+
+
+ <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image"><img src="red.png" alt="Product"></div>
+        <p>Kyros Eau De Parfum 100ml<br>For Men</p>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 265px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+
+        <div class="product-card">
+        <div class="product-image"><img src="per2.webp" alt="Product"></div>
+        <p>Kyros Eau De Parfum 100ml<br>For Men</p>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 265px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+
+       <div class="product-card">
+        <div class="product-image"><img src="white.jpg" alt="Product"></div>
+        <p>Kyros Eau De Parfum 100ml<br>For Men</p>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 265px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+      </div>
+
+      <div class="product-grid">
+
+        <div class="product-card">
+        <div class="product-image"><img src="img4.jpg" alt="Product"></div>
+        <p>Kyros Eau De Parfum 100ml<br>For Men</p>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 265px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+       <div class="product-card">
+        <div class="product-image"><img src="img5.jpg" alt="Product"></div>
+        <p>Kyros Eau De Parfum 100ml<br>For Men</p>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 265px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+       <div class="product-card">
+        <div class="product-image"><img src="img6.jpg" alt="Product"></div>
+        <p>Kyros Eau De Parfum 100ml<br>For Men</p>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 265px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+      </div>
+
+      <div class="product-grid">
+
+        <div class="product-card">
+        <div class="product-image"><img src="brown.webp" alt="Product"></div>
+        <p>Kyros Eau De Parfum 100ml<br>For Men</p>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 265px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+
+       <div class="product-card">
+        <div class="product-image"><img src="img7.webp" alt="Product"></div>
+        <p>Kyros Eau De Parfum 100ml<br>For Men</p>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 265px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+
+       <div class="product-card">
+        <div class="product-image"><img src="ne.webp" alt="Product"></div>
+        <p>Kyros Eau De Parfum 100ml<br>For Men</p>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 265px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+      </div>
+
+      <div class="bb">
+      <button class="load" style=" width: 200px; padding: 10px; color: black; border: 2px solid #003B49; border-radius: 6px; background: none;">Load More</button>
+    </div>
+
+<div class="footer">
+  <div>
+    <h2 style="color: #003B49; font-size: 24px; margin-bottom: 20px; margin-top: 70px; margin-left: -30px;">Fragranzia</h2>
+  </div>
+
+  <div class="footer-section">
+    <h5 style="font-weight: bold; margin-bottom: 10px;">Pages</h5>
+    <ul>
+      <li>Home</li>
+      <li>Products</li>
+      <li>Gifting</li>
+      <li>About</li>
+      <li>Profile</li>
+    </ul>
+  </div>
+
+  <div class="footer-section">
+    <h5>Quick Links</h5>
+    <ul>
+      <li>Privacy policy</li>
+      <li>Terms and conditions</li>
+      <li>FAQs</li>
+      <li>Customer service</li>
+    </ul>
+  </div>
+
+  <div class="footer-section">
+    <h5>Contact</h5>
+    <p><i class="fas fa-envelope"></i> frtafurniture@gmail.com</p>
+    <p><i class="fas fa-phone"></i> +91 9876543210</p><br>
+    <h5>Social Media</h5>
+    <div class="social-media">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-x-twitter"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bottom">
+  <span class="footer-links">
+    Web Accessibility | Terms of Use | Privacy Statement | Contact Us
+  </span>
+  <span class="footer-right">
+    © 2024 Fragranzia Company. All rights reserved.
+  </span>
+</div>
+       
+
+
+
+    </div>
+ </body>
+ </html>

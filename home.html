@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fragranzia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    .page-border {
+      border: 30px solid gray;
+      width: 1000px;
+      height: 3330px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      padding: 20px;
+    }
+
+    .header h2 {
+      font-size: 24px;
+      color: #003B49;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-left: auto;
+    }
+
+    .list {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+      color: #333;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 2px solid #ccc;
+      border-radius: 999px;
+      padding: 8px 15px;
+      background-color: white;
+      width: 250px;
+    }
+
+    .search-box i {
+      font-size: 18px;
+      color: #555;
+      margin-right: 10px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      font-size: 15px;
+      background: transparent;
+      flex: 1;
+    }
+
+    .icon-group {
+      display: flex;
+      gap: 20px;
+      font-size: 18px;
+    }
+
+    .icon1, .icon2, .icon3 {
+      border: 1px solid #bbb;
+      border-radius: 50%;
+      font-size: 17px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner {
+      background-color: #003B49;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background-image: url('blue.png');
+      color: white;
+      margin: 30px 50px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      padding: 30px;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      max-width: 300px;
+      margin-top: -100px;
+    }
+
+    .hero-text h2 {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .hero-text button {
+      padding: 10px 20px;
+      border: none;
+      background-color: white;
+      color: #003049;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero-image img {
+      width: 230px;
+      margin-left: -100px;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px 50px;
+      gap: 20px;
+    }
+
+    .feature-box {
+      background-color: whitesmoke;
+      padding: 20px;
+      border-radius: 10px;
+      height: 150px;
+      flex: 1;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .feature-box img {
+      height: 100px;
+      margin-bottom: 10px;
+    }
+
+    .feature-box h4 {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .feature-box p {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .info-section {
+      display: flex;
+      justify-content: space-around;
+      background-color: white;
+      padding: 25px 20px;
+      margin: 30px 50px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .info-box {
+      width: 250px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .info-box i {
+      font-size: 30px;
+      color: #003B49;
+    }
+
+    .info-text h5 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .info-text p {
+      font-size: 13px;
+      color: #333;
+    }
+
+    .featured-section {
+      margin: 30px 50px;
+    }
+
+    .featured-section h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .featured-section h3 span {
+      color: #003B49;
+    }
+
+    .featured-products {
+      display: flex;
+      gap: 20px;
+      padding-bottom: 10px;
+      width: 100%;
+    }
+    .sn{
+      width: 150px;
+
+    }
+    .shop-now-badge{
+      margin-top: -100px;
+      margin-right: 150px;
+       background-color: #00425e;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      width: 60px;
+      height: 20px;
+      
+
+     
+    }
+     .product-grid{
+      display: flex;
+      flex-direction: row;
+      gap: 0px;
+      margin-left: -45px;
+      
+
+      
+
+    }
+   
+    .product-image img {
+      width: 150px;
+      height: 160px;
+      margin-left: 40px;
+      margin-top: 20px;
+    }
+    .product-image {
+        background-color: white;
+        box-shadow: 0 0 26px rgba(0,0,0,0.08);
+       height: 240px;
+      width: 250px;
+      border-top-left-radius: 80px;
+      border-bottom-right-radius: 80px;
+    }
+    .product-card{
+      margin-left: 40px;
+      margin-top: 36px;
+      
+      
+     
+    }
+
+     .featured-section {
+      margin: 30px 50px;
+    }
+
+    .featured-section h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .featured-section h3 span {
+      color: #003B49;
+    }
+
+    .featured-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .arrow-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .arrow {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: default;
+    }
+
+    .product-card p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #222;
+      line-height: 1.4;
+    }
+
+    .price {
+      font-weight: bold;
+      color: black;
+      font-size: 16px;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      font-size: 13px;
+      color: gray;
+      margin-left: 8px;
+      
+    }
+  .quote-section {
+  text-align: center;
+  margin: 40px 0;
+  width: 150;
+}
+
+.quote-section p {
+  font-size: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card-grid .card-item {
+  position: relative;
+}
+
+.card-grid img {
+  width: 280px;
+  height: 280px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.card-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  font-weight: bold;
+  color: white;
+  margin-left: 15px;
+}
+
+.categories-section {
+  margin: 40px 50px;
+}
+
+.categories-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categories-header h3 {
+  font-size: 18px;
+  margin-left: -50px;
+}
+
+.categories-header span {
+  color: #003B49;
+}
+
+.categories-header a {
+  font-size: 13px;
+  color: #333;
+  text-decoration: none;
+}
+
+.categories-icons {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.category-item {
+  text-align: center;
+}
+
+.category-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  padding: 26px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.category-item p {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.promo-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ background-color: rgb(183, 227, 244);
+  padding: 20px;
+  margin: 30px 50px;
+  border-radius: 10px;
+  
+}
+
+.promo-text {
+  max-width: 50%;
+}
+
+.promo-text h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #003049;
+  margin-bottom: 10px;
+}
+
+.promo-text p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.promo-text button {
+  background-color: #003049;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.promo-image img {
+  width: 200px;
+  transform: rotate(10deg);
+  margin-right: 20px;
+}
+.footer {
+  background: #9dc3c9;
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 40px 60px 20px;
+  width: 880px;
+  font-family: Arial, sans-serif;
+  margin-left: -100px;
+}
+
+ 
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-size: 14px;
+  color: black;
+}
+
+.footer-section p {
+  font-size: 14px;
+  color: black;
+  margin: 6px 0;
+}
+
+.social-media {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-media i {
+  font-size: 16px;
+  color: black;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  font-size: 13px;
+  background: #9dc3c9;
+  width: 940px;
+  margin-left: -100px;
+  border-top: 1px solid #555;
+  color: black;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  white-space: nowrap;
+}
+
+.footer-right {
+  white-space: nowrap;
+}
+
+  </style>
+</head>
+<body>
+  <div class="page-border">
+    <div class="container">
+
+   
+      <div class="header">
+        <h2>Fragranzia</h2>
+        <div class="header-right">
+          <ul class="list">
+            <li>Home</li>
+            <li>Products</li>
+            <li>Gifting</li>
+            <li>About</li>
+          </ul>
+          <div class="search-box">
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="Search Here" />
+          </div>
+          <div class="icon-group">
+            <div class="icon1"><i class="fas fa-shopping-cart"></i></div>
+            <div class="icon2"><i class="fas fa-bell"></i></div>
+            <div class="icon3"><i class="fas fa-user"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="banner">
+        ENJOY FESTIVE DISCOUNTS! FREE SHIPPING ABOVE ₹999 !
+      </div>
+
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Discover perfumes that celebrate individuality</h1>
+          <p>Every moment with an unforgettable essence.</p>
+          <button>Shop Now</button>
+        </div>
+        <div class="hero-image">
+          <img src="bbb.png" alt="Perfume Bottles" style=" transform: rotate(-15deg);  left: 60px; top: 30px;">
+           <img src="bbb.png" alt="Perfume Bottles" style=" transform: rotate(20deg); height:180px; width: 200px;  left: 160px; top: 60px;">
+        </div>
+      </section>
+
+      <section class="features">
+       
+<div class="feature-box" style="display: flex; justify-content: space-between; align-items: center; text-align: left;">
+  <div>
+    <h4>Unlock Exclusive Offers</h4>
+    <p>Discover special deals tailored just for you!</p>
+  </div>
+  <img src="yellow color per.webp" alt="Exclusive Offer" style="height: 150px; margin-bottom: 0;">
+</div>
+
+        <div class="feature-box">
+        
+          <h4>Gift a Scents to your loved one.</h4>
+          <p>Make your love more beautiful</p>
+            <img src="black.png" alt="Gift" style="width: 140px; height:110px; margin-top: -6px;">
+        </div>
+        <div class="feature-box">
+        
+          <h4>Luxury Scents Starting at ₹4,000</h4>
+          
+            <img src="lu.png" alt="Luxury" style="width: 140px; height:110px; margin-top: 15px;  transform: rotate(20deg); margin-left:120px;">
+            <div class="shop-now-badge">Shop Now</div>
+        </div>
+      </section>
+
+     
+      <section class="info-section">
+        <div class="info-box">
+          <i class="fas fa-truck"></i>
+          <div class="info-text">
+            <h5>Fast & Reliable Delivery</h5>
+            <p>Get your orders delivered on time, every time.</p>
+          </div>
+        </div>
+        <div class="info-box">
+          <i class="fas fa-shield-alt"></i>
+          <div class="info-text">
+            <h5>Secure Payments</h5>
+            <p>Shop with confidence using our encrypted payment methods.</p>
+          </div>
+        </div>
+        <div class="info-box">
+          <i class="fas fa-headset"></i>
+          <div class="info-text">
+            <h5>24/7 Customer Support</h5>
+            <p>We're here to assist you anytime, anywhere.</p>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="featured-section">
+      <div class="featured-header">
+        <h3>Featured <span>Collections</span></h3>
+        <div class="arrow-controls">
+          <div class="arrow"><i class="fas fa-chevron-left"></i></div>
+          <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+      </div>
+      
+      <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image"><img src="red.png" alt="Product"></div>
+        <h4>Kyros Eau De Parfum 100ml<br>For Men</h4>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 240px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+
+        <div class="product-card">
+        <div class="product-image"><img src="black.jpg" alt="Product"></div>
+        <h4>Kyros Eau De Parfum 100ml<br>For Men</h4>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 240px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+
+       <div class="product-card">
+        <div class="product-image"><img src="img4.jpg" alt="Product"></div>
+        <h4>Kyros Eau De Parfum 100ml<br>For Men</h4>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 240px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+      
+        <div class="product-card">
+        <div class="product-image"><img src="ne.webp" alt="Product"></div>
+       
+        <h4>royal emura<br>For Men</h4>
+        <div><span class="price">Rs 650</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 87px; height: 35px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px; border-top-right-radius: 0px;"></button>
+      </div>
+      </div>
+
+
+     
+<section class="quote-section">
+  <p>"It's an art. A craft. A science. At Fragranzia, we're in the business of creating memories that last forever<br> through our fragrances."</p>
+
+  <div class="card-grid">
+    <div class="card-item">
+      <img src="row1.jpg" alt="New Arrivals">
+      <div class="card-label">New Arrivals</div>
+    </div>
+    <div class="card-item">
+      <img src="row2.jpg" alt="Limited Edition">
+      <div class="card-label">Limited Edition</div>
+    </div>
+    <div class="card-item">
+      <img src="row3.jpg" alt="Best Sellers">
+      <div class="card-label">Best Sellers</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="categories-section">
+  <div class="categories-header">
+    <h3>Explore <span>Categories</span></h3>
+    <a href="#">See All</a>
+  </div>
+
+  <div class="categories-icons">
+    <div class="category-item">
+      <img src="img7.webp" alt="Eau De Parfum">
+      <p>Eau De Parfum</p>
+    </div>
+    <div class="category-item">
+      <img src="per2.webp" alt="Concentrated">
+      <p>Concentrated</p>
+    </div>
+    <div class="category-item">
+      <img src="img6.jpg" alt="Deodorants">
+      <p>Deodorants</p>
+    </div>
+    <div class="category-item">
+      <img src="white.jpg" alt="Body Mist">
+      <p>Body Mist</p>
+    </div>
+    <div class="category-item">
+      <img src="last.png" alt="Combo">
+      <p>Combo</p>
+    </div>
+  </div>
+</section>
+
+
+ <section class="featured-section">
+      <div class="featured-header">
+        <h3 style="margin-left: -55px;">offer zone</h3>
+        <div class="arrow-controls">
+          <div class="arrow"><i class="fas fa-chevron-left"></i></div>
+          <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+      </div>
+      <div class="pp">
+      <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image"><img src="red.png" alt="Product"></div>
+        <h4>Kyros Eau De Parfum 100ml<br>For Men</h4>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 240px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+
+        <div class="product-card">
+        <div class="product-image"><img src="black.jpg" alt="Product"></div>
+        <h4>Kyros Eau De Parfum 100ml<br>For Men</h4>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 240px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+
+       <div class="product-card">
+        <div class="product-image"><img src="img4.jpg" alt="Product"></div>
+        <h4>Kyros Eau De Parfum 100ml<br>For Men</h4>
+        <div><span class="price">Rs 899</span><span class="old-price">Rs 2600</span></div>
+        <button style=" margin-top: 10px;  width: 240px;  padding: 10px;  background-color: #003B49; color: white;  border: none;  border-radius: 6px;">Add to Cart</button>
+      </div>
+
+      
+        
+      </div>
+
+
+     
+<section class="promo-banner">
+  <div class="promo-text">
+    <h2>Elegance in Every Bottle</h2>
+    <p>Discover timeless fragrances crafted for every moment</p>
+    <button>Shop Now</button>
+  </div>
+  <div class="promo-image">
+    <img src="bluee.jpg" alt="Perfume Promo">
+  </div>
+</section>
+
+
+
+
+ <div class="footer">
+  <div>
+    <h2 style="color: #003B49; font-size: 24px; margin-bottom: 20px; margin-top: 70px; margin-left: -30px;">Fragranzia</h2>
+  </div>
+
+  <div class="footer-section">
+    <h4 style="font-weight: bold; margin-bottom: 10px;">Pages</h4>
+    <ul>
+      <li>Home</li>
+      <li>Products</li>
+      <li>Gifting</li>
+      <li>About</li>
+      <li>Profile</li>
+    </ul>
+  </div>
+
+  <div class="footer-section">
+    <h4>Quick Links</h4>
+    <ul>
+      <li>Privacy policy</li>
+      <li>Terms and conditions</li>
+      <li>FAQs</li>
+      <li>Customer service</li>
+    </ul>
+  </div>
+
+  <div class="footer-section">
+    <h4>Contact</h4>
+    <p><i class="fas fa-envelope"></i> frtafurniture@gmail.com</p>
+    <p><i class="fas fa-phone"></i> +91 9876543210</p><br>
+    <h4>Social Media</h4>
+    <div class="social-media">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-x-twitter"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bottom">
+  <span class="footer-links">
+    Web Accessibility | Terms of Use | Privacy Statement | Contact Us
+  </span>
+  <span class="footer-right">
+    © 2024 Fragranzia Company. All rights reserved.
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+      
+
+
+    </div>
+  </div>
+</body>
+</html>

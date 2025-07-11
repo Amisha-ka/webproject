@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fragranzia - Product Detail Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+
+    .page-border {
+      border: 30px solid gray;
+      width: 1200px;
+      margin: auto;
+      background: white;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background-color: white;
+    }
+
+    .header h2 {
+      font-size: 24px;
+      color: #003B49; 
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-left: auto;
+    }
+
+    .list {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 2px solid #ccc;
+      border-radius: 999px;
+      padding: 8px 15px;
+      background-color: white;
+      width: 250px;
+    }
+
+    .search-box i {
+      font-size: 18px;
+      color: #555;
+      margin-right: 10px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      font-size: 15px;
+      background: transparent;
+      flex: 1;
+    }
+
+    .icon-group {
+      display: flex;
+      gap: 20px;
+      font-size: 18px;
+    }
+
+    .icon1, .icon2, .icon3 {
+      border: 1px solid #bbb;
+      border-radius: 50%;
+      font-size: 17px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner {
+      background-color: #003B49;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .product-container {
+      display: flex;
+      padding: 40px;
+    }
+
+    .left-thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-right: 20px;
+    }
+
+    .left-thumbnails img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+    }
+
+    .image-buttons-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .main-image img {
+      height: 300px;
+      margin-bottom: 10px;
+    }
+
+    .purchase-btn,
+    .cart-btn {
+      width: 370px;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left: -100px;
+    }
+
+    .purchase-btn {
+      background-color: #003B49;
+      color: white;
+      border: none;
+    }
+
+    .cart-btn {
+      background-color: white;
+      color: black;
+      border: 2px solid #003B49;
+    }
+
+    .product-details {
+      flex: 1;
+      margin-left: 30px;
+    }
+
+    .product-details h2 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .product-details .brand {
+      font-size: 16px;
+      
+    }
+
+    .rating strong{
+      margin: 10px 0;
+      color: #2d961d;
+      font-size: 14px;
+    }
+
+    .stock-warning {
+      color: red;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .price-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .discount {
+      color: green;
+      font-weight: bold;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .quantity-selector button {
+      padding: 5px 10px;
+      font-size: 18px;
+      background-color: none;
+      border: 1px solid ;
+      width: 70px;
+      
+    }
+
+    .delivery {
+      font-size: 15px;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .product-description {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .bold{
+      font-size: 10px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .offers {
+      font-size: 14px;
+      font-size: 15px;
+      margin-bottom: 25px;
+      margin-left: -40px;
+      
+    }
+
+    .offers li {
+      margin-bottom: 8px;
+      list-style: none;
+    }
+
+   
+
+    .suggested-section {
+      padding: 30px;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+
+    .suggested-section h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .suggested-scroll {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: nowrap;
+    }
+
+    .product-card {
+      width: 230px;
+      background: white;
+      border-radius: 25px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      margin: 5px 0;
+    }
+
+    .product-title {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .product-price {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .product-old-price {
+      text-decoration: line-through;
+      font-weight: normal;
+      font-size: 13px;
+      color: gray;
+    }
+
+    .add-cart-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #003B49;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-around;
+      padding: 30px;
+       background: #9dc3c9;
+      margin-top: 40px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 8px;
+    }
+
+    .social-media i {
+      margin-right: 10px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 12px;
+      padding: 10px 0;
+       background: #9dc3c9;
+    }
+
+    .footer-links {
+      margin-right: 20px;
+    }
+
+    .footer-right {
+      color: #666;
+    }
+    .text{
+      margin-left: 40px;
+      color: #555;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="page-border">
+    <div class="header">
+      <h2>Fragranzia</h2>
+      <div class="header-right">
+        <ul class="list">
+          <li>Home</li>
+          <li style="color: #003B49;">Products</li>
+          <li>Gifting</li>
+          <li>About</li>
+        </ul>
+        <div class="search-box">
+          <i class="fa fa-search"></i>
+          <input type="text" placeholder="Search Here" />
+        </div>
+        <div class="icon-group">
+          <div class="icon1"><i class="fas fa-shopping-cart"></i></div>
+          <div class="icon2"><i class="fas fa-bell"></i></div>
+          <div class="icon3"><i class="fas fa-user"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner">
+      ENJOY FESTIVE DISCOUNTS! FREE SHIPPING ABOVE ₹999 !
+    </div>
+
+  <div class="text">
+    <p>Home > Product > Kyros Eau De Parfum 100ml For Men</p>
+  </div>
+
+    <div class="product-container">
+      <div class="left-thumbnails">
+        <img src="perfume.jpg" alt="Thumb 1">
+        <img src="frame1.jpg" alt="Thumb 2">
+        <img src="frame2.jpg" alt="Thumb 3">
+      </div>
+
+      <div class="image-buttons-container">
+        <div class="main-image">
+          <img src="perfume.jpg" alt="Main Perfume Image">
+        </div>
+        <button class="purchase-btn">Purchase Now</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+
+      <div class="product-details">
+        <h2>Autograph eau de parfum 100ml for men</h2>
+        <div class="brand">Autograph</div>
+        <div class="rating"><strong>4.5 ★</strong> &nbsp; 1,000 Ratings</div><br>
+        <div class="stock-warning">Hurry only few stocks left!</div><br>
+        <div class="price-box">
+          <div class="price">Rs 899</div>
+          <div class="old-price">Rs 2000</div>
+          <div class="discount">61% off</div>
+        </div>
+        <div class="quantity-selector">
+          <button>- 1 +</button>
+          
+        </div>
+        <div class="delivery">
+          <h3>Delivery:</h3>
+          Delivery by 28 Aug, Wednesday | Free<br>
+          if ordered before 9:24 PM
+        </div>
+        <div class="product-description">
+         <div class="bold"><h1>Discription</h1></div> 
+          <p>This fragrance exudes a confident and enigmatic personality. Its composition features a top note of lemon and mandarin with a twist of apple that enhances the freshness. The heart reveals a warm blend of high-grade lavender and a hint of cinnamon, beautifully wrapped in patchouli, musk, and vanilla to ensure a powerful and flowing scent.</p>
+        </div>
+        <ul class="offers">
+          <h3>Available offer</h3>
+          <li><i class="fa-solid fa-tag" style="color: #0ea026;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>Buy two of the same product and get a third one free.</li>
+          <li><i class="fa-solid fa-tag" style="color: #0ea026;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>Enjoy free standard shipping on orders exceeding ₹1,399.</li>
+          <li><i class="fa-solid fa-tag" style="color: #0ea026;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>Get 15% off your first order.</li>
+          <li><i class="fa-solid fa-tag" style="color: #0ea026;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>Receive a free tool case with the purchase of any perfume over ₹2,000</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="suggested-section">
+      <h2>Suggested for you</h2>
+      <div class="suggested-scroll">
+        <div class="product-card">
+          <img src="ne.webp" alt="Autograph Perfume">
+          <p class="product-title">Autograph Eau De Parfum 100ml<br>For Men</p>
+          <p class="product-price">RS 999 <span class="product-old-price">RS 2241</span></p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="brown.webp" alt="Royal Perfume">
+          <p class="product-title">Royal Eau De Parfum 100ml<br>For Men</p>
+          <p class="product-price">RS 650 <span class="product-old-price">RS 1400</span></p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="img4.jpg" alt="Nareus Perfume">
+          <p class="product-title">Royal Eau De Parfum 100ml<br>For Men</p>
+          <p class="product-price">RS 650 <span class="product-old-price">RS 1400</span></p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="black.jpg" alt="Kyros Perfume">
+          <p class="product-title">Kyros Eau De Parfum 100ml<br>For Men</p>
+          <p class="product-price">RS 899 <span class="product-old-price">RS 2600</span></p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <h2>Fragranzia</h2>
+      </div>
+
+      <div class="footer-section">
+        <h4>Pages</h4>
+        <ul>
+          <li>Home</li>
+          <li>Products</li>
+          <li>Gifting</li>
+          <li>About</li>
+          <li>Profile</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Privacy policy</li>
+          <li>Terms and conditions</li>
+          <li>FAQs</li>
+          <li>Customer service</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> frtafurniture@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +91 9876543210</p><br>
+        <h4>Social Media</h4>
+        <div class="social-media">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-x-twitter"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-linkedin"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-links">
+        Web Accessibility | Terms of Use | Privacy Statement | Contact Us
+      </span>
+      <span class="footer-right">
+        © 2024 Fragranzia Company. All rights reserved.
+      </span>
+    </div>
+  </div>
+</body>
+</html>
